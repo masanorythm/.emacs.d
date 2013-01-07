@@ -3,18 +3,11 @@
 ;; 去掉菜单栏
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
+
 ;; set tab
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
-;; 上一次打开
-(require 'session)
-(add-hook 'after-init-hook 'session-initialize)
-(load "desktop")
-(desktop-load-default)
-(desktop-read)
-(add-hook 'kill-emacs-hook
-          '(lambda()(desktop-save "~/")))
 
 ;; 显示行号
 (global-linum-mode 1)
@@ -34,6 +27,7 @@
 (require 'php-mode)
 (add-hook 'php-mode-pear-hook 'turn-on-font-lock)
 
+;; 拷贝
 (defun copy-line (&optional arg)
  "Save current line into Kill-Ring without mark the line"
  (interactive "P")
@@ -60,3 +54,21 @@
 (global-set-key (kbd "C-c w") 'copy-word)
 (global-set-key (kbd "C-c l") 'copy-line)
 (global-set-key (kbd "C-c p") 'copy-paragraph)
+
+
+;; 上一次打开
+(require 'session)
+(add-hook 'after-init-hook 'session-initialize)
+(load "desktop")
+(desktop-load-default)
+(desktop-read)
+(add-hook 'kill-emacs-hook
+          '(lambda()(desktop-save "~/")))
+
+;;格式化整个文件函数
+(defun indent-whole ()
+  (interactive)
+  (indent-region (point-min) (point-max))
+  (message "format successfully"))
+;;绑定到F7键
+(global-set-key [f7] 'indent-whole)
