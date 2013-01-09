@@ -16,6 +16,10 @@
 (setq indent-line-function 'insert-tab)
 (setq c-basic-offset 4)
 
+;; 代码折叠
+(add-hook 'c-mode-hook 'hs-minor-mode)
+(add-hook 'c++-mode-hook 'hs-minor-mode)
+
 ;; 显示行号
 (global-linum-mode 1)
 (setq linum-format "%d")
@@ -77,5 +81,4 @@
   (interactive)
   (indent-region (point-min) (point-max))
   (message "format successfully"))
-;;绑定到F7键
-(global-set-key [f7] 'indent-whole)
+(load "~/.emacs.d/key-bind.el")
