@@ -4,10 +4,17 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 
+(require 'cc-mode)
+(defun my-c++-mode-hook () 
+  (setq c-basic-offset 4)
+  (c-set-offset 'substatement-open 0))
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+
 ;; set tab
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
+(setq c-basic-offset 4)
 
 ;; 显示行号
 (global-linum-mode 1)
