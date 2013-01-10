@@ -1,5 +1,11 @@
 ;; 启动emacs 不显示提示信息
 (setq inhibit-startup-message t)
+
+;; 背景色，前景色，光标颜色
+(set-background-color "black")
+(set-foreground-color "white")
+(set-cursor-color "green")
+
 ;; 去掉菜单栏
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
