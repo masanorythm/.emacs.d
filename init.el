@@ -28,7 +28,7 @@
 
 ;; 显示行号
 (global-linum-mode 1)
-(setq linum-format "%d")
+(setq linum-format "%3d")
 
 ;; git-emacs
 (add-to-list 'load-path "~/.emacs.d/git-emacs/")
@@ -88,3 +88,4 @@
   (indent-region (point-min) (point-max))
   (message "format successfully"))
 (load "~/.emacs.d/key-bind.el")
+(load "~/.emacs.d/xcscope.el")
