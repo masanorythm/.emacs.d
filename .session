@@ -1,6 +1,8 @@
-;;; Automatically generated on Sun Jan  6 10:49:34 2013
-;;; Invoked by orange@NX-SH-PC010 using 24.1.1
-(setq-default session-file-alist '(("~/.emacs.d/init.el" 719 1031 1 nil nil 719 (overwrite-mode))))
-(setq-default file-name-history '("~/.emacs.d/init.el" "~/.emacs" "~/.e" "~/.emacs.d/" "~/projects/space/web/lib/classes/Test/Action/" "~/projects/space/web/lib/classes/Default/Action/" "/usr/share/emacs" "/etc/emacs24" "/etc/emacs" "/etc/emacs24/site-start.d/" "~/1.txt" "~/projects/space/web/res/js/" "~/projects/space/web/tpls/Default/User/Hc.tpl" "~/projects/space/web/lib/classes/Default/Helper/" "~/projects/space/web/etc/define.php" "~/projects/space/web/lib/classes/" "~/projects/space/web/etc/"))
-(setq-default search-ring '("function doHp"))
-(setq-default occur-collect-regexp-history '("\\1"))
+;;; Automatically generated on Wed Jan 16 21:01:58 2013
+;;; Invoked by administrator@ubuntu.ubuntu-domain using 23.3.1
+(setq-default session-file-alist '(("~/programs/html/keynav.html" 169 908 1 nil nil 169 (overwrite-mode)) ("~/.xprofile" 7 nil 1 nil nil 7 (overwrite-mode))))
+(setq-default file-name-history '("~/.emacs.d/init.el" "~/.emacs" "~/programs/html/keynav.html" "~/.xprofile"))
+(setq-default command-history '((find-file "~/.emacs.d/init.el" t) (eval-buffer) (find-file "~/.emacs" t) (find-file "~/programs/html/keynav.html" t) (eshell nil)))
+(setq-default extended-command-history '("eval-buffer" "eshell"))
+(setq-default serial-name-history '("/dev/ttyS0"))
+(setq-default serial-speed-history '("9600" "1200" "2400" "4800" "14400" "19200" "28800" "38400" "57600" "115200"))

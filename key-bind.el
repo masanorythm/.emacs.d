@@ -4,4 +4,4 @@
 
 ;;代码折叠
 ;; 全部
-(glyph-set-key (kbd "C-f1") 'hs-hide-all)
+;(glyph-set-key (kbd "C-f1") 'hs-hide-all)
