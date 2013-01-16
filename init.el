@@ -1,5 +1,11 @@
 ;; 启动emacs 不显示提示信息
 (setq inhibit-startup-message t)
+
+;; 颜色
+(set-background-color "black")
+(set-foreground-color "white")
+(set-cursor-color "green")
+
 ;; 去掉菜单栏
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
@@ -25,8 +31,8 @@
 (setq linum-format "%d")
 
 ;; git-emacs
-(add-to-list 'load-path "~/.emacs.d/git-emacs/")
-(require 'git-emacs)
+;;(add-to-list 'load-path "~/.emacs.d/git-emacs/")
+;;(require 'git-emacs)
 
 ;; auto-complete
 (require 'auto-complete-config)
@@ -81,4 +87,4 @@
   (interactive)
   (indent-region (point-min) (point-max))
   (message "format successfully"))
-(load "~/.emacs.d/key-bind.el")
+;(load "~/.emacs.d/key-bind.el")
