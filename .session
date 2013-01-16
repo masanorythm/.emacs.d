@@ -1,8 +1,0 @@
-;;; Automatically generated on Wed Jan 16 21:01:58 2013
-;;; Invoked by administrator@ubuntu.ubuntu-domain using 23.3.1
-(setq-default session-file-alist '(("~/programs/html/keynav.html" 169 908 1 nil nil 169 (overwrite-mode)) ("~/.xprofile" 7 nil 1 nil nil 7 (overwrite-mode))))
-(setq-default file-name-history '("~/.emacs.d/init.el" "~/.emacs" "~/programs/html/keynav.html" "~/.xprofile"))
-(setq-default command-history '((find-file "~/.emacs.d/init.el" t) (eval-buffer) (find-file "~/.emacs" t) (find-file "~/programs/html/keynav.html" t) (eshell nil)))
-(setq-default extended-command-history '("eval-buffer" "eshell"))
-(setq-default serial-name-history '("/dev/ttyS0"))
-(setq-default serial-speed-history '("9600" "1200" "2400" "4800" "14400" "19200" "28800" "38400" "57600" "115200"))
