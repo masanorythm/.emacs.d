@@ -85,10 +85,6 @@
         (desktop-save desktop-dirname)))
 ;(add-hook 'auto-save-hook 'my-desktop-save)
 (desktop-load-default)
-<<<<<<< HEAD
-=======
-;;(desktop-read)
->>>>>>> 0d8d15d63cd8db3d1d815ed5305894f97097617a
 (add-hook 'kill-emacs-hook
           '(lambda()(desktop-save "~/")))
 
@@ -98,10 +94,7 @@
   (indent-region (point-min) (point-max))
   (message "format successfully"))
 (load "~/.emacs.d/key-bind.el")
-<<<<<<< HEAD
 (load "~/.emacs.d/xcscope.el")
 (load "~/.emacs.d/auto-insert.el")
 (load "~/.emacs.d/c-style.el")
-=======
 
->>>>>>> 0d8d15d63cd8db3d1d815ed5305894f97097617a
