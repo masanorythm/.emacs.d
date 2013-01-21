@@ -11,12 +11,7 @@
 (scroll-bar-mode 0)
 
 (require 'cc-mode)
-(defun my-c++-mode-hook () 
-  (setq c-basic-offset 4)
-  (c-set-offset 'substatement-open 0))
-(add-hook 'c++-mode-hook 'my-c++-mode-hook)
-(add-hook 'c-mode-common-hook '(lambda ()
-                                 (local-set-key (kbd "RET") 'newline-and-indent)))
+
 ;; set tab
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -95,6 +90,6 @@
   (message "format successfully"))
 (load "~/.emacs.d/key-bind.el")
 (load "~/.emacs.d/xcscope.el")
-(load "~/.emacs.d/auto-insert.el")
+;(load "~/.emacs.d/auto-insert.el")
 (load "~/.emacs.d/c-style.el")
 

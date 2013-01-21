@@ -10,7 +10,8 @@
 (setq tab-stop-list ())
 (loop for x downfrom 40 to 1 do
       (setq tab-stop-list (cons (* x 4) tab-stop-list)))
-
+;(add-hook 'c-mode-common-hook '(lambda ()
+;                                 
 (defconst my-c-style
   '((c-tab-always-indent        . t)
 ;;    (c-comment-only-line-offset . 4)
@@ -44,6 +45,7 @@
   (setq tab-width 4
         ;; this will make sure spaces are used instead of tabs
         indent-tabs-mode nil)
+  (local-set-key (kbd "RET") 'newline-and-indent)
   ;; we like auto-newline and hungry-delete
 ;;  (c-toggle-auto-hungry-state 1)
   ;; key bindings for all supported languages.  We can put these in
