@@ -89,7 +89,7 @@
   (indent-region (point-min) (point-max))
   (message "format successfully"))
 (load "~/.emacs.d/key-bind.el")
-(load "~/.emacs.d/xcscope.el")
+;(load "~/.emacs.d/xcscope.el")
 ;(load "~/.emacs.d/auto-insert.el")
 (load "~/.emacs.d/c-style.el")
 
