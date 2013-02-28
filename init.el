@@ -18,6 +18,10 @@
 (setq indent-line-function 'insert-tab)
 (setq c-basic-offset 4)
 
+;; 鼠标自动移开
+(mouse-avoidance-mode 'animate)
+(blink-cursor-mode nil)
+
 ;; 代码折叠
 (add-hook 'c-mode-hook 'hs-minor-mode)
 (add-hook 'c++-mode-hook 'hs-minor-mode)
