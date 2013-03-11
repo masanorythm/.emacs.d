@@ -1,7 +1,9 @@
-;;绑定到F7键
+;;代码格式化
 (global-set-key [f7] 'indent-whole)
 
+;;块状代码符号对齐                                                        
+(global-set-key [f8] 'align-regexp)  
 
-;;代码折叠
-;; 全部
-;(glyph-set-key (kbd "C-f1") 'hs-hide-all)
+;;块状代码符号对齐                   
+(global-set-key [f9] 'replace-string)
+

@@ -18,6 +18,10 @@
 (setq indent-line-function 'insert-tab)
 (setq c-basic-offset 4)
 
+;; 鼠标自动移开
+(mouse-avoidance-mode 'animate)
+(blink-cursor-mode nil)
+
 ;; 代码折叠
 (add-hook 'c-mode-hook 'hs-minor-mode)
 (add-hook 'c++-mode-hook 'hs-minor-mode)
@@ -89,7 +93,7 @@
   (indent-region (point-min) (point-max))
   (message "format successfully"))
 (load "~/.emacs.d/key-bind.el")
-(load "~/.emacs.d/xcscope.el")
+;(load "~/.emacs.d/xcscope.el")
 ;(load "~/.emacs.d/auto-insert.el")
 ;(load "~/.emacs.d/c-style.el")
 ;(load "~/.emacs.d/zencoding/zencoding-mode.el")
