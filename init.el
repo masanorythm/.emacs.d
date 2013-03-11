@@ -91,5 +91,8 @@
 (load "~/.emacs.d/key-bind.el")
 (load "~/.emacs.d/xcscope.el")
 ;(load "~/.emacs.d/auto-insert.el")
-(load "~/.emacs.d/c-style.el")
-
+;(load "~/.emacs.d/c-style.el")
+;(load "~/.emacs.d/zencoding/zencoding-mode.el")
+;;(add-to-list "~/emacs.d/zencoding")
+;;(require 'zencoding-mode)
+;;(add-hook 'sgml-mode-hook 'zencoding-mode)
