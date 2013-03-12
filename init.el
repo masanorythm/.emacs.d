@@ -96,4 +96,9 @@
 ;(load "~/.emacs.d/xcscope.el")
 ;(load "~/.emacs.d/auto-insert.el")
 (load "~/.emacs.d/c-style.el")
-
+(load "~/.emacs.d/gtags.el")
+;;(setq load-path (cons "/home/orange/global" load-path))
+(autoload 'gtags-mode "gtags" "" t)
+(setq c-mode-hook
+      '(lambda ()
+         (gtags-mode 1)))
