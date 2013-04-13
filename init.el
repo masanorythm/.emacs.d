@@ -96,6 +96,7 @@
 ;(load "~/.emacs.d/xcscope.el")
 ;(load "~/.emacs.d/auto-insert.el")
 (load "~/.emacs.d/c-style.el")
+
 ;(load "~/.emacs.d/zencoding/zencoding-mode.el")
 ;;(add-to-list "~/emacs.d/zencoding")
 ;;(require 'zencoding-mode)
@@ -105,4 +106,12 @@
   "Minor mode for pseudo-structurally editing Lisp Mode.")
 (require 'parenface)
 (set-face-foreground 'paren-face "DimGray")
+
+
+(load "~/.emacs.d/gtags.el")
+;;(setq load-path (cons "/home/orange/global" load-path))
+(autoload 'gtags-mode "gtags" "" t)
+(setq c-mode-hook
+      '(lambda ()
+         (gtags-mode 1)))
 
