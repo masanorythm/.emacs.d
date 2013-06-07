@@ -30,6 +30,14 @@
 (global-linum-mode 1)
 (setq linum-format "%3d")
 
+;; ibus
+(require 'ibus)
+(add-hook 'after-init-hook 'ibus-mode-on)
+(ibus-define-common-key ?\C-\s nil)
+(ibus-define-common-key ?\C-/ nil)
+(setq ibus-cursor-color '("DarkOrange" "green" "limegreen"))
+(global-set-key (kbd "C-SPC") 'ibus-toggle)
+
 ;; git-emacs
 ;;(add-to-list 'load-path "~/.emacs.d/git-emacs/")
 ;;(require 'git-emacs)
