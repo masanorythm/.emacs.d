@@ -36,7 +36,8 @@
 (ibus-define-common-key ?\C-\s nil)
 (ibus-define-common-key ?\C-/ nil)
 (setq ibus-cursor-color '("DarkOrange" "green" "limegreen"))
-(global-set-key (kbd "C-SPC") 'ibus-toggle)
+(global-set-key (kbd "C-x e") 'ibus-disable)
+(global-set-key (kbd "C-x z") 'ibus-enable)
 
 ;; git-emacs
 ;;(add-to-list 'load-path "~/.emacs.d/git-emacs/")
