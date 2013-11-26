@@ -18,6 +18,11 @@
 (setq indent-line-function 'insert-tab)
 (setq c-basic-offset 4)
 
+;; set font
+(set-default-font "Ubuntumono-12")
+(set-fontset-font "fontset-default"  
+                  'gb18030' ("微软雅黑" . "unicode-bmp"))
+
 ;; 鼠标自动移开
 (mouse-avoidance-mode 'animate)
 (blink-cursor-mode nil)
