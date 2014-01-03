@@ -14,14 +14,14 @@
 
 ;; set tab
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
+(setq default-tab-width 4)
 (setq indent-line-function 'insert-tab)
 (setq c-basic-offset 4)
 
 ;; set font
 (set-default-font "Ubuntumono-12")
 (set-fontset-font "fontset-default"  
-                  'gb18030' ("微软雅黑" . "unicode-bmp"))
+                  'gb18030' ("Microsoft YaHei" . "unicode-bmp"))
 
 ;; 鼠标自动移开
 (mouse-avoidance-mode 'animate)
@@ -57,30 +57,42 @@
 (require 'go-mode-load)
 (require 'php-mode)
 (add-hook 'php-mode-pear-hook 'turn-on-font-lock)
+(add-hook 'php-mode-hook (lambda ()
+                           (defun ywb-php-lineup-arglist-intro (langelem)
+                             (save-excursion
+                               (goto-char (cdr langelem))
+                                          (vector (+ (current-column) c-basic-offset))))
+                           (defun ywb-php-lineup-arglist-close (langelem)
+                             (save-excursion
+                               (goto-char (cdr langelem))
+                               (vector (current-column))))
+                           (c-set-offset 'arglist-intro 'ywb-php-lineup-arglist-intro)
+                           (c-set-offset 'arglist-close 'ywb-php-lineup-arglist-close)))
+                             
 
 ;; 拷贝
 (defun copy-line (&optional arg)
- "Save current line into Kill-Ring without mark the line"
- (interactive "P")
- (let ((beg (line-beginning-position)) 
-	(end (line-end-position arg)))
- (copy-region-as-kill beg end)))
+  "Save current line into Kill-Ring without mark the line"
+  (interactive "P")
+  (let ((beg (line-beginning-position)) 
+        (end (line-end-position arg)))
+    (copy-region-as-kill beg end)))
 
 
 (defun copy-word (&optional arg)
- "Copy words at point"
- (interactive "P")
- (let ((beg (progn (if (looking-back "[a-zA-Z0-9]" 1) (backward-word 1)) (point))) 
-	(end (progn (forward-word arg) (point))))
- (copy-region-as-kill beg end)))
+  "Copy words at point"
+  (interactive "P")
+  (let ((beg (progn (if (looking-back "[a-zA-Z0-9]" 1) (backward-word 1)) (point))) 
+        (end (progn (forward-word arg) (point))))
+    (copy-region-as-kill beg end)))
 
 
 (defun copy-paragraph (&optional arg)
- "Copy paragraphes at point"
- (interactive "P")
- (let ((beg (progn (backward-paragraph 1) (point))) 
-	(end (progn (forward-paragraph arg) (point))))
- (copy-region-as-kill beg end)))
+  "Copy paragraphes at point"
+  (interactive "P")
+  (let ((beg (progn (backward-paragraph 1) (point))) 
+        (end (progn (forward-paragraph arg) (point))))
+    (copy-region-as-kill beg end)))
 
 (global-set-key (kbd "C-c w") 'copy-word)
 (global-set-key (kbd "C-c l") 'copy-line)
@@ -91,12 +103,12 @@
 (require 'session)
 (load "desktop")
 (add-hook 'after-init-hook 'session-initialize)
-;(require 'desktop)
+                                        ;(require 'desktop)
 (desktop-save-mode 1)
 (defun my-mydesktop-save ()
-    (if (eq (desktop-owner) (emacs-pid))
-        (desktop-save desktop-dirname)))
-;(add-hook 'auto-save-hook 'my-desktop-save)
+  (if (eq (desktop-owner) (emacs-pid))
+      (desktop-save desktop-dirname)))
+                                        ;(add-hook 'auto-save-hook 'my-desktop-save)
 (desktop-load-default)
 (add-hook 'kill-emacs-hook
           '(lambda()(desktop-save "~/")))
@@ -107,11 +119,11 @@
   (indent-region (point-min) (point-max))
   (message "format successfully"))
 (load "~/.emacs.d/key-bind.el")
-;(load "~/.emacs.d/xcscope.el")
-;(load "~/.emacs.d/auto-insert.el")
+                                        ;(load "~/.emacs.d/xcscope.el")
+                                        ;(load "~/.emacs.d/auto-insert.el")
 (load "~/.emacs.d/c-style.el")
 
-;(load "~/.emacs.d/zencoding/zencoding-mode.el")
+                                        ;(load "~/.emacs.d/zencoding/zencoding-mode.el")
 ;;(add-to-list "~/emacs.d/zencoding")
 ;;(require 'zencoding-mode)
 ;;(add-hook 'sgml-mode-hook 'zencoding-mode)
