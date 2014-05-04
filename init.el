@@ -35,40 +35,6 @@
 (global-linum-mode 1)
 (setq linum-format "%3d")
 
-;; ibus
-(require 'ibus)
-(add-hook 'after-init-hook 'ibus-mode-on)
-(ibus-define-common-key ?\C-\s nil)
-(ibus-define-common-key ?\C-/ nil)
-(setq ibus-cursor-color '("DarkOrange" "green" "limegreen"))
-(global-set-key (kbd "C-x e") 'ibus-disable)
-(global-set-key (kbd "C-x z") 'ibus-enable)
-
-;; git-emacs
-;;(add-to-list 'load-path "~/.emacs.d/git-emacs/")
-;;(require 'git-emacs)
-
-;; auto-complete
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
-(ac-config-default)
-(setq ac-quick-help-delay 0.01)
-
-(require 'go-mode-load)
-(require 'php-mode)
-(add-hook 'php-mode-pear-hook 'turn-on-font-lock)
-(add-hook 'php-mode-hook (lambda ()
-                           (defun ywb-php-lineup-arglist-intro (langelem)
-                             (save-excursion
-                               (goto-char (cdr langelem))
-                                          (vector (+ (current-column) c-basic-offset))))
-                           (defun ywb-php-lineup-arglist-close (langelem)
-                             (save-excursion
-                               (goto-char (cdr langelem))
-                               (vector (current-column))))
-                           (c-set-offset 'arglist-intro 'ywb-php-lineup-arglist-intro)
-                           (c-set-offset 'arglist-close 'ywb-php-lineup-arglist-close)))
-                             
 
 ;; 拷贝
 (defun copy-line (&optional arg)
@@ -98,6 +64,26 @@
 (global-set-key (kbd "C-c l") 'copy-line)
 (global-set-key (kbd "C-c p") 'copy-paragraph)
 
+(add-to-list 'load-path "~/.emacs.d/")
+
+;; ibus
+;; sudo apt-get install ibus-el
+(require 'ibus)
+(add-hook 'after-init-hook 'ibus-mode-on)
+(ibus-define-common-key ?\C-\s nil)
+(ibus-define-common-key ?\C-/ nil)
+(setq ibus-cursor-color '("DarkOrange" "green" "limegreen"))
+(global-set-key (kbd "C-x e") 'ibus-disable)
+(global-set-key (kbd "C-x z") 'ibus-enable)
+
+;; git-emacs
+
+
+;; auto-complete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
+(ac-config-default)
+(setq ac-quick-help-delay 0.01)
 
 ;; 上一次打开
 (require 'session)
